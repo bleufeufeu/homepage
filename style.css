@@ -1,0 +1,9 @@
+@font-face {
+    font-family: Major Mono;
+    src: url("./static/fonts/MajorMonoDisplay-Regular.ttf");
+}
+
+@font-face {
+    font-family: Mona Sans;
+    src: url("./static/fonts/MonaSans-VariableFont_wdth\,wght.ttf");
+}
