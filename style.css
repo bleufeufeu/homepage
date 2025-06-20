@@ -1,9 +1,328 @@
 @font-face {
-    font-family: Major Mono;
-    src: url("./static/fonts/MajorMonoDisplay-Regular.ttf");
+    font-family: Shaun_the_Sheep;
+    src: url("./static/fonts/Shaun_the_Sheep.ttf");
 }
 
 @font-face {
     font-family: Mona Sans;
     src: url("./static/fonts/MonaSans-VariableFont_wdth\,wght.ttf");
+}
+
+:root {
+  --night-sky: #1a1a1a;
+  --dark-meadow: #2d2d2d;
+  
+  --moonlit-wool: #e8e6e0;
+  
+  --midnight-green: #4a6741;
+  --forest-shadow: #3e5233;
+  --moss-green: #5c7a4f;
+
+  --lantern-yellow: #b8941f;
+  --golden-glow: #d4a82e;
+}
+
+main {
+    padding: 10vw;
+    background-color: var(--night-sky);
+    color: var(--moonlit-wool);
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.7rem;
+    display : inline-block;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    position : absolute;
+    width : 100%;
+    height : .2rem;
+    left: 0;
+    bottom: 10px;
+    background-color: var(--moss-green);
+}
+
+h1, h3 {
+    font-family: Shaun_the_Sheep;
+}
+
+p {
+    font-family: Mona Sans;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Top Section */
+
+.landing {
+    min-height: 100vh;
+}
+
+#profileImg {
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    z-index: 2;
+    position: relative;
+}
+
+.landingContent {
+    position: relative;
+    z-index: 2;
+}
+
+.contactIcons {
+    display: flex;
+    gap: 10px;
+    font-size: 2.1rem;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--golden-glow);
+}
+
+.greenStrip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: var(--moss-green);
+    clip-path: polygon(0 0, 100% 0%, 100% 41%, 0 72%);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Card Section */
+
+.card {
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    overflow: hidden;
+    background-color: var(--dark-meadow);
+    transition: all 0.5s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--golden-glow);
+}
+
+.card img {
+    border-radius: 30px 30px 0 0;
+}
+
+.cardContent {
+    padding: 20px 20px 40px 20px;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.projectContainer {
+    display: grid;
+    place-items: center;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Bottom Section */
+
+.contactContainer {
+    background-color: var(--moss-green);
+    padding: 10vw;
+    color: var(--moonlit-wool)
+}
+
+.contactContainer > p {
+    margin-bottom: 20px;
+}
+
+.contactMainP {
+    font-size: 1.2rem;
+}
+
+.contactContainer .contactIcons {
+    font-size: 2.4rem;
+}
+
+.contactContainer h1::after {
+    background-color: var(--golden-glow);
+}
+
+/* TABLET CSS */
+
+@media (min-width: 768px) {
+
+    main {
+        padding: 5vw;
+    }
+
+    h1 {
+        text-align: start;
+    }
+
+    /* Top Section */
+
+    .landing {
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 5vh;
+    }
+
+    .landingContent {
+        padding: 50px;
+        height: 100%;
+        z-index: 2;
+        position: relative;
+        background-color: var(--dark-meadow);
+        border-radius: 30px;
+    }
+
+    .contactIcons {
+        justify-content: end;
+    }
+
+   .profImgContainer {
+        width: 40vw;
+        height: 40vw;
+        border-radius: 50%;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    #profileImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /*Card Section */
+
+    .cardSection {
+        padding: 5vw;
+    }
+
+    .projectContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Bottom Section */
+
+    footer {
+        display: flex;
+        background-color: var(--moss-green);
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .contactContainer {
+        padding: 5vw 0 5vw 5vw;
+    }
+
+    .contactContainer .contactIcons {
+        justify-content: start;
+    }
+
+    #bottomImg {
+        width: 50%;
+        height: auto;
+        padding-right: 5vw;
+    }
+}
+
+/* DESKTOP CSS */
+
+@media (min-width: 1024px) {
+
+    /* Top Section */
+
+    .landing {
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 5vh;
+    }
+
+    .landingContent {
+        padding: 50px;
+        height: 100%;
+        z-index: 2;
+        position: relative;
+        background-color: var(--dark-meadow);
+        border-radius: 30px;
+    }
+
+    .contactIcons {
+        justify-content: end;
+    }
+
+   .profImgContainer {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    #profileImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /*Card Section */
+
+    .cardSection {
+        padding: 0;
+    }
+
+    .projectContainer {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /* Bottom Section */
+    footer {
+        display: flex;
+        background-color: var(--moss-green);
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .contactContainer {
+        padding: 5vw;
+    }
+
+    #bottomImg {
+        width: 50%;
+        max-width: 900px;
+        height: auto;
+        padding-right: 5vw;
+    }
+
 }
